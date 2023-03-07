@@ -42,6 +42,7 @@ export const StyledButtonContainer = styled('div')({
 export const StyledButton = styled('button')({
   background: '#005792',
   border: 'none',
+  borderRadius: '10px',
   width: '150px',
   height: '37px',
   marginTop: '15px',
