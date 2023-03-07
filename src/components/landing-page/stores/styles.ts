@@ -13,16 +13,23 @@ export const StyledStoreHeading = styled(Typography)(({ theme }) => ({
 
 export const StyledStoreGrid = styled('div')(({ theme }) => ({
   display: 'grid',
-  //   gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
   gridTemplateColumns: 'repeat(3, 1fr)',
   justifyItems: 'center',
   gap: `${theme.spacing(5)} 0`,
+
+  '@media (min-width: 768px) and (max-width: 992px)': {
+    gridTemplateColumns: 'repeat(2, 1fr)',
+  },
+
+  '@media (max-width: 767px)': {
+    gridTemplateColumns: 'repeat(1, 1fr)',
+  },
 }));
 
 export const StyledStoreImage = styled(Image)({
   borderRadius: '10px',
-  maxWidth: '350px',
+  minWidth: '300px',
   width: '100%',
-  maxHeight: '350px',
+  maxHeight: '400px',
   height: '100%',
 });
