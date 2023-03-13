@@ -1,12 +1,20 @@
 export default {
   name: 'stores',
-  title: 'stores',
+  title: 'Stores',
   type: 'document',
   fields: [
     {
-      title: 'products',
-      name: 'Products',
-      type: 'Products',
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'storeName',
+      title: 'StoreName',
+      type: 'string',
     },
   ],
 }
