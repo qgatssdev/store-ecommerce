@@ -5,8 +5,11 @@ import {
   StyledStoreGridContainer,
   StyledStoreHeading,
 } from './styles';
+import { client } from '../../../../lib/client';
 
-const Stores = () => {
+const Stores = ({ stores }: any) => {
+  console.log(stores);
+
   const products = [
     {
       data: '1',
@@ -37,6 +40,15 @@ const Stores = () => {
       </StyledStoreGrid>
     </StyledStoreGridContainer>
   );
+};
+
+export const getServerSideProps = async () => {
+  const query = '*[_type == "product"]';
+  const stores = await client.fetch(query);
+
+  return {
+    props: { stores },
+  };
 };
 
 export default Stores;
